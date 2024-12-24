@@ -43,7 +43,6 @@ sudo apt install \
   network-manager \
   ufw 
 
-
 cd "$working_folder"
 # TODO: Make option to pull these files only
 
@@ -65,8 +64,5 @@ cd "$git_folder"
 git clone https://github.com/lander247/dotfiles
 git clone https://github.com/lander247/dwm
 git clone https://git.suckless.org/dmenu
-
-# cd dotfiles
-# ./stow.sh
 
 echo "Done!"
