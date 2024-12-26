@@ -7,12 +7,13 @@ local_folder="$HOME/.local"
 bin_folder="$HOME/.local/bin"
 
 mkdir "$working_folder"
+mkdir "$config_folder"
 mkdir "$git_folder"
 mkdir "$local_folder"
 mkdir "$bin_folder"
-mkdir "$config_folder"
 
 # Install important packages
+# TODO: Make option for installing unnessecary packages
 sudo apt install \
   git \
   build-essential \
@@ -30,10 +31,6 @@ sudo apt install \
   stow \
   curl \
   kitty
-
-# Extra packages
-# TODO: Make option for installing extra packages
-sudo apt install \
   firefox-esr \
   pavucontrol \
   unzip \
@@ -42,9 +39,9 @@ sudo apt install \
   pulseaudio \
   network-manager \
   ufw 
-
-cd "$working_folder"
+  
 # TODO: Make option to pull these files only
+cd "$working_folder"
 
 # Install latest Neovim appimage
 wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
