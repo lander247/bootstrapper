@@ -13,7 +13,7 @@ mkdir "$local_folder"
 mkdir "$bin_folder"
 
 # Install important packages
-# TODO: Make option for installing unnessecary packages
+# TODO: Make option for installing unnessecary packages (past firefox-esr)
 sudo apt install \
   git \
   build-essential \
@@ -48,7 +48,7 @@ wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x ./nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
-# Install latest KeepassXC appimage
+# Install latest KeepassXC appimage (should probably make this cleaner)
 keepass_version="$(curl --silent "https://api.github.com/repos/keepassxreboot/keepassxc/releases/latest" | grep -Po "(?<=\"tag_name\": \").*(?=\")")"
 wget https://github.com/keepassxreboot/keepassxc/releases/latest/download/KeePassXC-"$keepass_version"-x86_64.appimage
 chmod +x ./KeePassXC-"$keepass_version"-x86_64.appimage
