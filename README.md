@@ -1,2 +1,2 @@
 # bootstrapper
-script to bootstrap personal dotfiles
+script to bootstrap personal dotfiles and other stuff
