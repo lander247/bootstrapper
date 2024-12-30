@@ -31,12 +31,8 @@ sudo apt install \
   stow \
   curl \
   kitty \
-  firefox-esr \
-  unzip \
-  imagemagick \
   ssh \
-  network-manager \
-  ufw 
+  network-manager 
   
 # TODO: Make option to pull these files only
 cd "$working_folder"
@@ -64,3 +60,5 @@ git clone https://git.suckless.org/dmenu
 git clone https://github.com/lander247/dwmblocks
 
 echo "Done!"
+
+sudo reboot now
