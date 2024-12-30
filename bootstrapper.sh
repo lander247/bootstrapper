@@ -30,7 +30,7 @@ sudo apt install \
   flameshot \
   stow \
   curl \
-  kitty
+  kitty \
   firefox-esr \
   unzip \
   imagemagick \
@@ -44,13 +44,15 @@ cd "$working_folder"
 # Install latest Neovim appimage
 wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x ./nvim.appimage
-sudo mv nvim.appimage /usr/local/bin/nvim
+sudo mv nvim.appimage "$bin_folder/nvim"
 
-# Install latest KeepassXC appimage (should probably make this cleaner)
+# Get current keepass version
 keepass_version="$(curl --silent "https://api.github.com/repos/keepassxreboot/keepassxc/releases/latest" | grep -Po "(?<=\"tag_name\": \").*(?=\")")"
-wget https://github.com/keepassxreboot/keepassxc/releases/latest/download/KeePassXC-"$keepass_version"-x86_64.appimage
-chmod +x ./KeePassXC-"$keepass_version"-x86_64.appimage
-sudo mv KeePassXC-"$keepass_version"-x86_64.appimage ~/.local/bin/keepassxc
+keepass_file="KeePassXC-$keepass_version-x86_64.appimage"
+# Pull keepass appimage from github
+wget https://github.com/keepassxreboot/keepassxc/releases/latest/download/"$keepass_file"
+chmod +x ./"$keepass_file"
+sudo mv "$keepass_file" "$bin_folder/keepassxc"
 
 rm -r "$working_folder"
 
@@ -59,5 +61,6 @@ cd "$git_folder"
 git clone https://github.com/lander247/dotfiles
 git clone https://github.com/lander247/dwm
 git clone https://git.suckless.org/dmenu
+git clone https://github.com/lander247/dwmblocks
 
 echo "Done!"
