@@ -32,11 +32,9 @@ sudo apt install \
   curl \
   kitty
   firefox-esr \
-  pavucontrol \
   unzip \
   imagemagick \
   ssh \
-  pulseaudio \
   network-manager \
   ufw 
   
