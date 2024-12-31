@@ -32,7 +32,8 @@ sudo apt install \
   curl \
   kitty \
   ssh \
-  network-manager 
+  network-manager \
+  pipewire
   
 # TODO: Make option to pull these files only
 cd "$working_folder"
